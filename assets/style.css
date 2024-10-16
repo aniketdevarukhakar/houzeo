@@ -591,6 +591,7 @@ header {
   }
   #mapview.active {
     display: block;
+    position: fixed;
     margin: 25px;
     top: 220px;
     height: 60vh;
