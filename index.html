@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Houzeo</title>
+    <link href="./images/favicon.png" rel="shortcut icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/swiper-bundle.min.css"
+    />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="flex-box space-between flex-wrap">
+        <!-- Logo -->
+        <div class="logo show-in-mobile">
+          <button id="hamburger" class="btn">
+            <img src="./images/hamburger.png" class="open-close open-icon" alt="hamburger" />
+            <img src="./images/cross.png" class="open-close close-icon hidden" alt="cross"/>
+          </button>
+        </div>
+        <div class="logo">
+          <a href=""
+            ><img src="./images/logo.png" class="hide-in-mobile" alt="logo desktop" width="124" height="35" />
+            <img src="./images/logo.png" class="show-in-mobile" alt="logo mobile" width="124" height="35" />
+          </a>
+        </div>
+        <div class="user show-in-mobile">
+          <a href="">
+            <img src="./images/user.png" alt="user" width="28" height="28" />
+          </a>
+        </div>
+        <!-- Menu lising  -->
+        <nav>
+          <ul class="menus flex-box space-between flex-wrap">
+            <li class="menu-items">
+              <a href="" class="menu-item">
+                Product <i class="fa-solid fa-caret-down"></i
+              ></a>
+            </li>
+            <li class="menu-items">
+              <a href="" class="menu-item">How Houzeo Works</a>
+            </li>
+            <li class="menu-items"><a href="" class="menu-item">Reviews</a></li>
+            <li class="menu-items">
+              <a href="" class="menu-item">
+                Buy <i class="fa-solid fa-caret-down"></i
+              ></a>
+            </li>
+            <li class="menu-items">
+              <a href="" class="menu-item">
+                Sell <i class="fa-solid fa-caret-down"></i
+              ></a>
+            </li>
+            <li class="menu-items"><a href="" class="menu-item">Pricing</a></li>
+            <li class="menu-items">
+              <a href="" class="menu-item">
+                Resources <i class="fa-solid fa-caret-down"></i
+              ></a>
+            </li>
+            <li class="menu-items"><a href="" class="menu-item">Sign In</a></li>
+            <li class="menu-items">
+              (844) 448-0110<br /><span class="fs-12"
+                >9am to 6pm CST, Mon-Sat</span
+              >
+            </li>
+            <!-- start free button  -->
+            <li class="menu-items">
+              <button class="btn startfree">Start Free Listing</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- start main body  -->
+    <div id="main">
+      <!-- top search bar -->
+      <div id="search-topheader">
+        <ul id="top-header" class="flex-box space-around flex-wrap">
+          <li>
+            <div class="search-container">
+              <input
+                type="search"
+                class="inputsearch"
+                name="search"
+                placeholder="Search Property..."
+              />
+              <button type="submit" class="btn search-btn btn-grad-blue">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </li>
+          <li class="show-in-mobile">
+            <img src="./images/filter-blue.png" alt="fliter blue" width="38" height="38" />
+          </li>
+          <li>
+            <div id="for-sale-container" class="custom-select">
+              <select id="for-sale" class="inputselect">
+                <option value="none" selected>For Sale</option>
+                <option value="house">House</option>
+                <option value="block">Block</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div id="price-container" class="custom-select">
+              <select id="price" class="inputselect">
+                <option value="none" selected>Price</option>
+                <option value="20000">20000</option>
+                <option value="15000">15000</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div id="beds-container" class="custom-select">
+              <select id="bedsBaths" class="inputselect">
+                <option value="none" selected>Beds & Baths</option>
+                <option value="2_beds">2 beds</option>
+                <option value="2_baths">2 Baths</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div id="propertyType-container" class="custom-select">
+              <select id="propertyType" class="inputselect">
+                <option value="none" selected>Property Type</option>
+                <option value="old">Old</option>
+                <option value="new">New</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div id="filter-container">
+              <div class="filter hide-in-mobile" id="filter">
+                <img src="./images/filter.png" class="btn-left-icon" alt="filter desktop" width="16" height="18"  /> Filters
+              </div>
+              <div class="show-in-mobile">
+                <img src="./images/filter-blue.png" class="filter-blue-icon" alt="filter mobile" width="38" height="38"  />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div id="save-container">
+              <button
+                type="button"
+                class="btn savebtn hide-in-mobile"
+                id="savefilter"
+              >
+                <img src="./images/save.png" class="btn-left-icon" alt="save icon" width="13" height="12" /> Save
+              </button>
+              <button
+                type="button"
+                class="btn savebtn show-in-mobile plane-blue-btn"
+              >
+                Save Search
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- body part -->
+      <div id="body-container">
+        <div class="flex-box space-between flex-start flex-wrap">
+          <!-- map view -->
+          <div id="mapview" class="col2">
+          </div>
+          <!-- properties list  -->
+          <div id="properties" class="col2">
+            <div class="top-title">
+              <h1>Austin, TX real estate & homes for sale</h1>
+              <div class="flex-box space-between">
+                <div id="property-count"></div>
+                <div class="sorting">
+                  <div class="">
+                    Sort By:
+                    <select class="inputsort" id="sorting">
+                      <option value="">New Listing</option>
+                      <option value="">Popular</option>
+                      <option value="">Releavent</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="property-list-card">
+              <ul class="flex-box flex-wrap" id="property-list"></ul>
+              <button class="btn btn-grad-blue show-in-mobile" id="mapiframe">
+                Map <img src="./images/map.png" alt="map icon" width="21" height="20"  />
+              </button>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="footer">
+              <p class="fs-12">Copyright: @<span class="year fs-12"></span> Houzeo. All rights reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="./assets/script.js"></script>
+    <!-- Leaflet JS -->
+  </body>
+</html>
