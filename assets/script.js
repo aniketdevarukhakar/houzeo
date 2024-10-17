@@ -62,6 +62,6 @@ let propertyData=[{id:1,name:"Gateway of India",property_type:"Apartment",for_sa
                     </div>
                   </a>
                 </li>`});propertyItems.innerHTML=propertyList;let swiperlist=document.querySelectorAll(".swiperlist");propertyData.forEach((data,index)=>{let imagesList="";if(data.images.length>0){data.images.forEach((imageURL)=>{imagesList+=`<swiper-slide>
-                       <img src="${imageURL}" alt="Property Image" />
+                       <img src="${imageURL}" alt="Property Image" width="303" height="175" />
                      </swiper-slide>`})}else{imagesList=`<img src="./images/property-NA.png" alt="Property Image not found" />`}
 if(swiperlist[index]){swiperlist[index].innerHTML=imagesList}});propertyData.forEach((data)=>{lat_long=data.geo_location;let map=L.map("mapview").setView([lat_long.lat,lat_long.lng],10);L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',}).addTo(map);propertyData.forEach((property)=>{L.marker([property.geo_location.lat,property.geo_location.lng]).addTo(map).bindPopup(`<b>${property.name}</b><br>${property.address}`)})})
